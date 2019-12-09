@@ -1,0 +1,28 @@
+spring:
+  profiles: local
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    username:
+    password:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+
+server:
+  port: 2300
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
